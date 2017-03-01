@@ -45,7 +45,7 @@ for FILE_PATH in "${FILES[@]}"; do
 	# figlet "${NAME}"
 
 	# Uhhhhhhh you might need gcc... Not sure how it will treat the c file and if it'll try to C++ it	
-	if ! (gcc "${FILE_PATH}" -c -o "${NAME}.o" && objcopy -N main -N _main "${NAME}.o" "${NAME}.o" && g++ tests.cpp "${NAME}.o" -lgtest -o "${NAME}_test") ; then
+	if ! (gcc "${FILE_PATH}" -c -o "${NAME}.o" && objcopy -N main -N _main "${NAME}.o" "${NAME}.o" && g++ -lgtest -pthread tests.cpp "${NAME}.o" -lgtest -o "${NAME}_test") ; then
 		figlet "${NAME}"
 		figlet "BUILD FAILED :("
 		echo "${NAME},BUILD_FAIL" >> REPORT.txt 
