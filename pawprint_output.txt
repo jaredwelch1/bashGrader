@@ -1,0 +1,29 @@
+//usr/local/lib/libgtest.a(gtest-all.cc.o): In function `testing::internal::ThreadLocal<testing::TestPartResultReporterInterface*>::~ThreadLocal()':
+gtest-all.cc:(.text._ZN7testing8internal11ThreadLocalIPNS_31TestPartResultReporterInterfaceEED2Ev[_ZN7testing8internal11ThreadLocalIPNS_31TestPartResultReporterInterfaceEED5Ev]+0x25): undefined reference to `pthread_getspecific'
+gtest-all.cc:(.text._ZN7testing8internal11ThreadLocalIPNS_31TestPartResultReporterInterfaceEED2Ev[_ZN7testing8internal11ThreadLocalIPNS_31TestPartResultReporterInterfaceEED5Ev]+0x3a): undefined reference to `pthread_key_delete'
+//usr/local/lib/libgtest.a(gtest-all.cc.o): In function `testing::internal::ThreadLocal<std::vector<testing::internal::TraceInfo, std::allocator<testing::internal::TraceInfo> > >::~ThreadLocal()':
+gtest-all.cc:(.text._ZN7testing8internal11ThreadLocalISt6vectorINS0_9TraceInfoESaIS3_EEED2Ev[_ZN7testing8internal11ThreadLocalISt6vectorINS0_9TraceInfoESaIS3_EEED5Ev]+0x25): undefined reference to `pthread_getspecific'
+gtest-all.cc:(.text._ZN7testing8internal11ThreadLocalISt6vectorINS0_9TraceInfoESaIS3_EEED2Ev[_ZN7testing8internal11ThreadLocalISt6vectorINS0_9TraceInfoESaIS3_EEED5Ev]+0x3a): undefined reference to `pthread_key_delete'
+//usr/local/lib/libgtest.a(gtest-all.cc.o): In function `testing::internal::ThreadLocal<std::vector<testing::internal::TraceInfo, std::allocator<testing::internal::TraceInfo> > >::GetOrCreateValue() const':
+gtest-all.cc:(.text._ZNK7testing8internal11ThreadLocalISt6vectorINS0_9TraceInfoESaIS3_EEE16GetOrCreateValueEv[_ZNK7testing8internal11ThreadLocalISt6vectorINS0_9TraceInfoESaIS3_EEE16GetOrCreateValueEv]+0x25): undefined reference to `pthread_getspecific'
+gtest-all.cc:(.text._ZNK7testing8internal11ThreadLocalISt6vectorINS0_9TraceInfoESaIS3_EEE16GetOrCreateValueEv[_ZNK7testing8internal11ThreadLocalISt6vectorINS0_9TraceInfoESaIS3_EEE16GetOrCreateValueEv]+0x88): undefined reference to `pthread_setspecific'
+//usr/local/lib/libgtest.a(gtest-all.cc.o): In function `testing::internal::ThreadLocal<testing::TestPartResultReporterInterface*>::CreateKey()':
+gtest-all.cc:(.text._ZN7testing8internal11ThreadLocalIPNS_31TestPartResultReporterInterfaceEE9CreateKeyEv[_ZN7testing8internal11ThreadLocalIPNS_31TestPartResultReporterInterfaceEE9CreateKeyEv]+0x25): undefined reference to `pthread_key_create'
+//usr/local/lib/libgtest.a(gtest-all.cc.o): In function `testing::internal::ThreadLocal<std::vector<testing::internal::TraceInfo, std::allocator<testing::internal::TraceInfo> > >::CreateKey()':
+gtest-all.cc:(.text._ZN7testing8internal11ThreadLocalISt6vectorINS0_9TraceInfoESaIS3_EEE9CreateKeyEv[_ZN7testing8internal11ThreadLocalISt6vectorINS0_9TraceInfoESaIS3_EEE9CreateKeyEv]+0x25): undefined reference to `pthread_key_create'
+//usr/local/lib/libgtest.a(gtest-all.cc.o): In function `testing::internal::ThreadLocal<testing::TestPartResultReporterInterface*>::GetOrCreateValue() const':
+gtest-all.cc:(.text._ZNK7testing8internal11ThreadLocalIPNS_31TestPartResultReporterInterfaceEE16GetOrCreateValueEv[_ZNK7testing8internal11ThreadLocalIPNS_31TestPartResultReporterInterfaceEE16GetOrCreateValueEv]+0x25): undefined reference to `pthread_getspecific'
+gtest-all.cc:(.text._ZNK7testing8internal11ThreadLocalIPNS_31TestPartResultReporterInterfaceEE16GetOrCreateValueEv[_ZNK7testing8internal11ThreadLocalIPNS_31TestPartResultReporterInterfaceEE16GetOrCreateValueEv]+0x88): undefined reference to `pthread_setspecific'
+collect2: error: ld returned 1 exit status
+                                 _       _   
+ _ __   __ ___      ___ __  _ __(_)_ __ | |_ 
+| '_ \ / _` \ \ /\ / / '_ \| '__| | '_ \| __|
+| |_) | (_| |\ V  V /| |_) | |  | | | | | |_ 
+| .__/ \__,_| \_/\_/ | .__/|_|  |_|_| |_|\__|
+|_|                  |_|                     
+ ____  _   _ ___ _     ____    _____ _    ___ _     _____ ____       __
+| __ )| | | |_ _| |   |  _ \  |  ___/ \  |_ _| |   | ____|  _ \   _ / /
+|  _ \| | | || || |   | | | | | |_ / _ \  | || |   |  _| | | | | (_) | 
+| |_) | |_| || || |___| |_| | |  _/ ___ \ | || |___| |___| |_| |  _| | 
+|____/ \___/|___|_____|____/  |_|/_/   \_\___|_____|_____|____/  (_) | 
+                                                                    \_\
