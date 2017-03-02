@@ -1,2 +1,5 @@
 # ignore .txt files 
 *.txt
+
+# ignore build files
+*.o
