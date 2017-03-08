@@ -54,7 +54,7 @@ for FILE_PATH in "${FILES[@]}"; do
 		# That way you don't magically lose it when we're done
 		# ... let's do that
 		# I have actually never done this. It probably works
-		./"${NAME}_test"
+		valgrind --leak-check=full --error-limit=no ./"${NAME}_test"
 
 
 		figlet "${NAME}"
