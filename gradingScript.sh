@@ -3,7 +3,7 @@
 
 #set -x
 
-if [ "$#" -ne 2 ]; then
+if [ "$#" -ne 3 ]; then
     echo "BAD PARAM COUNT! DIR FILE_GLOB"
     # Uhh, we won't be capturing this output anyway...
     exit 1
@@ -38,14 +38,14 @@ echo "NAME,SCORE" > REPORT.txt
 
 for FILE_PATH in "${FILES[@]}"; do
 	# grab pawprint from file path
-	NAME="${FILE_PATH##*/}"
+	NAME="${FILE_PATH##*/}" 
 	NAME="${NAME%%_*}"
 
 	# Figlet is just adorable, really.
 	# figlet "${NAME}"
 
 	# Uhhhhhhh you might need gcc... Not sure how it will treat the c file and if it'll try to C++ it	
-	if ! (gcc "${FILE_PATH}" -c -o "${NAME}.o" && objcopy -N main -N _main "${NAME}.o" "${NAME}.o" && g++ -lgtest -pthread tests.cpp "${NAME}.o" -lgtest -o "${NAME}_test") ; then
+	if ! (gcc "${FILE_PATH}" -c -o "${NAME}.o" && objcopy -N main -N _main "${NAME}.o" "${NAME}.o" && g++ -lgtest -pthread "${3}" "${NAME}.o" -lgtest -o "${NAME}_test") ; then
 		figlet "${NAME}"
 		figlet "BUILD FAILED :("
 		echo "${NAME},BUILD_FAIL" >> REPORT.txt 
@@ -70,7 +70,7 @@ for FILE_PATH in "${FILES[@]}"; do
 			(( failed = failures + disabled ))
 			figlet "PASSED: ${passed}/${tests}"
 			figlet "SCORE: ${points_given}/${points_total}"
-			echo "${NAME},${points_given}/${points_total}" >> REPORT.txt
+			echo "${NAME},${points_given}/${points_total},${comments}" >> REPORT.txt
 			rm -f test_detail.xml
 		else
 			# program segfaulted or something
